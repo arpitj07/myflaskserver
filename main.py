@@ -17,8 +17,8 @@ db = mongo.db.UserEventCollection
 
 @app.route('/')
 def index():
-#     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
-       return render_template("./build/index.html")
+    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+      
 
 # Route for sign up 
 @app.route("/register", methods=['POST'])
