@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, render_template
 from flask_cors import CORS
 from flask_pymongo import PyMongo
 
@@ -17,7 +17,8 @@ db = mongo.db.UserEventCollection
 
 @app.route('/')
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+#     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+       return render_template("./build/index.html")
 
 # Route for sign up 
 @app.route("/register", methods=['POST'])
