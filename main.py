@@ -19,7 +19,11 @@ db = mongo.db.UserEventCollection
 def index():
     return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
       
-
+@app.route('/register2')
+def index2():
+    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    
+ 
 # Route for sign up 
 @app.route("/register", methods=['POST'])
 def register():
@@ -76,7 +80,7 @@ def complete():
 def getUsers(userEmail):
     if request.method=='GET':
         user = db.find_one({'userEmail': userEmail})
-        return user['Task']
+        return jsonify(user['Task'])
 
 
 
